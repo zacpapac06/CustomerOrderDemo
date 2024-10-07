@@ -1,6 +1,8 @@
 using Customers.api.Data;
 using Customers.api.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Register MediatR
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
+
 
 
 var app = builder.Build();

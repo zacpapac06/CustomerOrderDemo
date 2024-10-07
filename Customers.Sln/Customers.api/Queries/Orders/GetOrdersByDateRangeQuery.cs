@@ -1,9 +1,12 @@
-﻿namespace Customers.api.Queries.Orders
+﻿using Customers.api.Models;
+using MediatR;
+
+namespace Customers.api.Queries.Orders
 {
     /// <summary>
     /// This query retrieves all orders within a specified date range.
     /// </summary>
-    public class GetOrdersByDateRangeQuery
+    public class GetOrdersByDateRangeQuery: IRequest<IEnumerable<Order>>
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
