@@ -17,7 +17,8 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Handlers\" />
+    <Folder Include="Handlers\Queries\Customers\" />
+    <Folder Include="Handlers\Queries\Orders\" />
   </ItemGroup>
 
 </Project>
