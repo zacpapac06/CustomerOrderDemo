@@ -1,9 +1,12 @@
-﻿namespace Customers.api.Queries.Customers
+﻿using Customers.api.Dtos;
+using MediatR;
+
+namespace Customers.api.Queries.Customers
 {
     /// <summary>
     /// This query retrieves all customers.
     /// </summary>
-    public class GetAllCustomersQuery
+    public class GetAllCustomersQuery:IRequest<List<CustomerDto>>
     {
 
     }

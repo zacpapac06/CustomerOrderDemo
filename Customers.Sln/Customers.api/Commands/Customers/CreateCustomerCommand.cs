@@ -1,6 +1,9 @@
-﻿namespace Customers.api.Commands.Customers
+﻿using Customers.api.Dtos;
+using MediatR;
+
+namespace Customers.api.Commands.Customers
 {
-    public class CreateCustomerCommand
+    public class CreateCustomerCommand:IRequest<CustomerDto>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

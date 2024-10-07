@@ -1,4 +1,5 @@
 using Customers.api.Data;
+using Customers.api.Mapper;
 using Customers.api.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -25,8 +26,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Register MediatR
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
-
-
+// Register AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 
